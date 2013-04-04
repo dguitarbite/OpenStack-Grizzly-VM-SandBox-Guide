@@ -35,6 +35,6 @@ Happy Stacking!!!
      style="border-style: none;" alt="Public Domain Mark" />
 </a>
 <br />
-This work (<span property="dct:title">OpenStack-Grizzly-VM-Install-Guide</span>, by <a href="https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide" rel="dct:creator"><span property="dct:title">Dguitarbite</span></a>), identified by <a href="http://dguitarbite.github.com/dguitarbite/" rel="dct:publisher"><span property="dct:title">Pranav Salunke</span></a>, is free of known copyright restrictions.
+This work (<span property="dct:title">OpenStack-Grizzly-VM-Install-Guide</span>, by <a href="https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide" rel="dct:creator"><span property="dct:title">Dguitarbite</span></a>), identified by <a href="http://dguitarbite.github.com/dguitarbite" rel="dct:publisher"><span property="dct:title">Pranav Salunke</span></a>, is free of known copyright restrictions.
 </p>
 Note: This guide is in progress and is not adviced to be reffered to until you really know what you are doing.
