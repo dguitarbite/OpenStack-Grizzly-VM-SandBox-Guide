@@ -5,8 +5,6 @@ Under Developement - Do not follow until you really know what you are up to !!!
 
 This is a guide for Stackers who want to have a more simpler, step by step process to deploy OpenStack Grizzly using Virtual Machines.
 
-![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
-
 I will not be putting up VMware related guide this time, if you still want this fell free to drop an email at : pps.pranav@gmail.com
 
 * A short Decription:
@@ -14,18 +12,15 @@ I will not be putting up VMware related guide this time, if you still want this 
   * [VMware] (https://www.vmware.com/) is one of the virtualization softwares which will provide a simple UI for the same. Its closed source and you will have to buy it. It is a bit more user-friendly than Virtual Box but it comes with a cost. 
    
   * [Virtual Box] (https://www.virtualbox.org/) is OpenSource virtualization software which is a bit noob-proof and agrees more with Geeks. But it supports more options and provides an API for managing, controlling Virtual Machines and other related settings.
-  
- 
-* For those who want to use `VMware` for `OpenStack Sandboxing`, can check out the following link(work in progress-not recommended for begineers):
-  * [OpenStack-Folsom-VM-SandBoxing-Guide with VMware](https://github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/tree/VMware)
 
+![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
 
 * For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link(v0.4 - Ready to be Used. Happy Stacking):
-  * [OpenStack-Folsom-VM-SandBoxing-Guide with Virtual Box](https://github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/tree/VirtualBox)
+  * [OpenStack-Folsom-VM-SandBoxing-Guide with Virtual Box]()
 
 
 * For Advanced Users who know all about virtualization - or do not want to use Virtual Machines for OpenStack deployment should check out:
-  * [OpenStack-Folsom-Install-Guide](https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst) by Bilel Msekni
+  * [OpenStack-Grizzly-Install-Guide](https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide) by [Bilel Msekni] (https://github.com/mseknibilel)
 
 
 Happy Stacking!!!
