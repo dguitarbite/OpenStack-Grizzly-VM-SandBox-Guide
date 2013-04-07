@@ -8,4 +8,4 @@ Port Forwarding is very simple and you can trace the particular Virtual Machine 
 
 Ill be showing how to do `Port Forwarding` for `VitrualBox`, if someone wants to know about VMware - please do pull up a request or email me.
 
-To learn how to do Port Forwarding for VirtualBox click `here <https://github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/blob/VirtualBox/Port%20Forwarding.rst>`_.
+To learn how to do Port Forwarding for VirtualBox click `here <https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/VirtualBox/Port%20Forwarding.rst>`_.
