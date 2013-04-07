@@ -10,11 +10,11 @@ Well to do port forwarding is a trivial two step task.
 
 * Select the button `Port Forwarding`.
 
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/5.Port%20Forwarding/Port%20Forwarding%201.png
+    .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/5.Port%20Forwarding/Port%20Forwarding%201.png
 
 * Add a TCP/IP rule. And select the required ports. 
 
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/5.Port%20Forwarding/Port%20Forwarding%202.png
+    .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/5.Port%20Forwarding/Port%20Forwarding%202.png
 
 * The following table will give you a basic idea of the ports .
 
