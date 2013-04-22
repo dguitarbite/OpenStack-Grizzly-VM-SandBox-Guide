@@ -165,227 +165,12 @@ There are two different types of configurations that are possible for setting up
 3. Configure Virtual Networks 
 ==============
 
-**1. Setting up Virtual Network** :
-------------
-
-  **Note:** If you are using Bridged Connections Please Ignore this section.
-
-* Step 1:
-    Start **Virtual Box**
-
-* Step 2:
-    **File>Preferences** 
-    Select **Network** Option.
-* Step 3: 
-    Click on **Create Host Only Networks** - Create three networks. They will be automatically named as
-      vboxnet0, vboxnet1, vboxnet2
-        
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/1.%20Virtual%20Network/1-Create%20Host%20only%20Network.png
-
-* Step 4:
-  *  Select vboxnet0 and click on edit, select **Adapter Tab**
-       Set the IPv4 address as  **100.10.10.1**
-        Leave the other options as it is.
-      
-     .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/1.%20Virtual%20Network/2-Give%20Static%20Ip%20to%20Host.png
-    
-  *  Select **DHCP Server** tab
-       Unselect the **Enable Server** option.
-            
-     .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/1.%20Virtual%20Network/3-%20Configure%20DHCP.png
-
-* Step 5:
-  * Select vboxnet1 and click on edit, select **Adapter Tab**
-      Set the IPv4 address as **100.20.20.1**
-        Leave the other options as it is.
-  * Select **DHCP Server** tab
-        Unselect the **Enable Server** option.
-
-* Step 6:
-  * Select vboxnet2 and click on edit, select **Adapter Tab**
-      Set the IPv4 address as **192.168.100.1**
-        Leave the other options as it is.
-  * Select **DHCP Server** tab
-        Unselect the **Enable Server** option.
-
-* Step 7:
-  * Open terminal on your host `Alt+Ctrl+T` and type **Ifconfig** you should get something similar to the following output. The Networks are Highlited.
-    
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/1.%20Virtual%20Network/4-Check%20Network%20Adapters.png
-
-  
-  * If you are not-sure of what you are doing - Note the IP-Address on your host should match to the one in the above snap.
-
-**2. Set up Network Interface Cards(NIC) on Virtual Machines** :
-------------      
-  
-* Step 1:
-    Control Node
-    For **Host-Only** Connections
-      Your VM's should have the following configuration. NIC-Name and Ipaddress are allocated after installation of the Operating System.
-
- 
-      +-----------------------------+--------------------------+-----------+------------------+
-      | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-      +=============================+==========================+===========+==================+
-      |  Adapter 1                  | Host Only/vboxnet0       | eth0      | 100.10.10.51     |  
-      +-----------------------------+--------------------------+-----------+------------------+
-      |  Adapter 2                  | Host Only/vboxnet2       | eth1      | 192.168.100.51   |
-      +-----------------------------+--------------------------+-----------+------------------+
-      |  Adapter 3                  | NAT                      | eth2      | DHCP(auto-assign)|
-      +-----------------------------+--------------------------+-----------+------------------+
-
-      Create a new Virtual Machine ... select the appropriate options
-      
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/1-%20Basic%20Info.png
-    
-    
-      Ram Required for this node is 512 MB (minimum recommended for Ubuntu Server 12.XX), if you have more ram feel free to allocate it. But remember that your Compute Node needs
-      the highest amount of RAM and Processor so I usually save up for the compute node...reduce the processor allocation pool
-      
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/2-%20Resource%20Allocation.png
-  
-    
-    For **Bridged Connections** 
-    
-      Set up two NIC cards as bridged connections and the settings as shown by the diagram...
-        
- 
-      +-----------------------------+--------------------------+-----------+------------------+
-      | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-      +=============================+==========================+===========+==================+
-      |  Adapter 1                  | Bridged Adapter          | eth0      | 100.10.10.51     |  
-      +-----------------------------+--------------------------+-----------+------------------+
-      |  Adapter 2                  | Bridged Adapter          | eth1      | 198.168.100.51   |
-      +-----------------------------+--------------------------+-----------+------------------+
-      
-        .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/7-%20Bridge%20Connection.png
-
-      
-        Note: Internet is available to bridged connected VM's directly so no need to setup a seperate NIC for internet.
-    
-    For **Host Only Connections** set up three NIC cards as per the given diagram.
-      eth0 - OpenStack Management Network - 100.10.10.51 (IP addresses are not allocated now)
-
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/3-%20control-nw1.png
-      
-      eth1 - Expose OpenStack API - 192.168.100.51 (IP addresses are not allocated now)
-      
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/4%20-%20control-nw2.png
-
-      
-      eth2 - Virtual Box NAT (Network Address Translation) - for internet Connection. (IP addresses are not allocated now)
-      
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/2.%20Setup%20VM/Control%20Node/5%20-control-nw3.png
-
-
-* Step 2:
-    Network Node
-      Create a new Virtual Machine ... configure it similar to the Control Node except for the networking part.
-      
-        **For Host-Only Connections** Create four NIC's 
-
-           
-          +-----------------------------+--------------------------+-----------+------------------+
-          | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-          +=============================+==========================+===========+==================+
-          |  Adapter 1                  | Host Only/vboxnet0       | eth0      | 100.10.10.52     |  
-          +-----------------------------+--------------------------+-----------+------------------+
-          |  Adapter 2                  | Host Only/vboxnet1       | eth1      | 102.20.20.52     |
-          +-----------------------------+--------------------------+-----------+------------------+
-          |  Adapter 3                  | Host Only/vboxnet2       | eth2      | 198.168.100.52   |
-          +-----------------------------+--------------------------+-----------+------------------+
-          |  Adapter 4                  | NAT                      | eth3      | DHCP(auto-assign)|
-          +-----------------------------+--------------------------+-----------+------------------+
-  
-          1. eth0 - OpenStack Management Network - 100.10.10.52 (IP addresses are allocated after Installation of OS).
-          2. eth1 - OpenStack VM Conf. Network - 100.20.20.52 (IP addresses are allocated after Insallation of OS).
-          3. eth2 - Expose OpenStack to external networks - 192.168.100.52 (IP addresses are allocated after installation OS).
-          4. eth3 - NAT - for internet connection.(DHCP - auto allocate IP address while installing OS).
-
-
-        **For bridged connections** Create three NIC's connect them to bridge network as done above.
-
- 
-           +-----------------------------+--------------------------+-----------+------------------+
-           | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-           +=============================+==========================+===========+==================+
-           |  Adapter 1                  | Bridged Adapter          | eth0      | 100.10.10.52     |  
-           +-----------------------------+--------------------------+-----------+------------------+
-           |  Adapter 2                  | Bridged Adapter          | eth1      | 100.20.20.52     |
-           +-----------------------------+--------------------------+-----------+------------------+
-           |  Adapter 3                  | Bridged Adapter          | eth2      | 198.168.100.52   |
-           +-----------------------------+--------------------------+-----------+------------------+
-          
-          1. eth0 - OpenStack Management Network - 100.10.10.52 (IP addresses are allocated after Installation of OS).
-          2. eth1 - OpenStack VM Conf. Network - 100.20.20.52 (IP addresses are allocated after Installation of OS).
-          3. eth2 - Expose OpenStack to external networks - 192.168.100.52 (IP addresses are allocated after Installation of OS).
-          
-          **Note:** Bridged Connection dosent a seperate NAT connection for internet.
-          
-
-* Step 3:
-    Compute Node:
-      Create a new Virtual Machine ... configure it as follows:
-
-        If possible give it about **1gb - 4 gb of ram** depending how much extra RAM you have
-        Give as many Processor Cores you can spare with **100% processor Execution Capacity**
-  
-        **For Host-Only Connections** Create four NIC's 
-
-          +-----------------------------+--------------------------+-----------+------------------+
-          | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-          +=============================+==========================+===========+==================+
-          |  Adapter 1                  | Host Only/vboxnet0       | eth0      | 100.10.10.53     |  
-          +-----------------------------+--------------------------+-----------+------------------+
-          |  Adapter 2                  | Host Only/vboxnet1       | eth1      | 100.20.20.53     |
-          +-----------------------------+--------------------------+-----------+------------------+
-          |  Adapter 3                  | NAT                      | eth2      | DHCP(auto-assign)|
-          +-----------------------------+--------------------------+-----------+------------------+
-
-
-          1. eth0 - OpenStack Management Network - 100.10.10.53 (IP addresses are not allocated now)
-          2. eth1 - OpenStack VM Conf. Network - 100.20.20.53 (IP addresses are not allocated now)
-          3. eth2 - NAT - for internet connection.
-
-
-        **For bridged connections** Create two NIC's connect them to bridge network as done above.
-
-           +-----------------------------+--------------------------+-----------+------------------+
-           | Virtual Box Network Adapter | Virtual Box Network Name | NIC-Name  | Ipaddress        |
-           +=============================+==========================+===========+==================+
-           |  Adapter 1                  | Bridged Adapter          | eth0      | 100.10.10.53     |  
-           +-----------------------------+--------------------------+-----------+------------------+
-           |  Adapter 2                  | Bridged Adapter          | eth1      | 100.20.20.53     |
-           +-----------------------------+--------------------------+-----------+------------------+
-          
-           **Note:** Bridged Connection dosent a seperate NAT connection for internet.
-
-        
-
-**Note:** For Host Only Connections - Please do remember to select the NIC card which has the internet access NAT - which is
-::
-  During Installation of Ubuntu Server on the Virtual Machine Nodes you will be asked for the Network Interface to be 
-  Selected for Internet. Make sure you select the proper one.
-  1. Control Node :
-      Select eth2
-  2. Network Node :
-      Select eth3
-  3. Compute Node :
-      Select eth2
-
-**Note:** You can select the network interface orders as per your choice but to make life simpler I have followed `OpenStack-Folsom-Install-Guide by  SkiBLE mseknibilel <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide>`_ 
-
-**Warning:**  You have to select the MAC addresses of the NIC cards before you start the installation of Ubuntu server. And make sure
-              that the MAC address are not changed once you start the installation. This leads to **Network Interface variable name registory error**
-              inside the kernel network configurations and you will have to manually edit it , let alone the hell of SSH Key conflicts due
-              to change in MAC address after installation of the OS's and OpenStack packages on your VM's. Believe me you will be already saturated by OpenStack and Virtualization setups, you want to keep it simple.
-            
-
 
 
 4. Install SSH and FTP
 ==============
+
+* **This is for begineers ... experts keep your curses in your bags for including such a nooby section in this guide**
 
 * I feel that there is a need to install SSH and FTP so that you could use your remote shell to login into the machine and use your terminal which is more convenient that using the Virtual Machines tty through the Virtual Box's  UI. You get a few added comforts like copy - paste commands into the remote terminal which is not possible directly on VM.
 
@@ -403,11 +188,7 @@ There are two different types of configurations that are possible for setting up
 
 **Warning -** Please do not install any of the other packages except for which are mentioned below unless you know what you are doing. I have experienced unwanted errors, package conflicts ... due to the same.
 
-1. Control Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
-
-2. Quantum/Network Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
-
-3. Compute Node: Install **SSH server** and **Virtual Machines Host** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
+1. Single Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
 
 
 6. Its about to get sticky
@@ -433,7 +214,7 @@ There are two different types of configurations that are possible for setting up
 **If you have Reached till here - Congrats. I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is goign to start**
 -------------
 
-7. Controller Node
+7. Single Node
 ==============
 
 7.1. Preparing Ubuntu 12.10/12.04
@@ -494,131 +275,6 @@ Configure your network by editing :: /etc/network/interfaces file
 For the remaining Installation Follow `OpenStack-Folsom-Install-guide 2. Control Node <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
 
 
-8. Network Node
-==============
-
-8.1. Preparing the Node
-------------------
-
-
-* If your installation is Ubuntu 12.04 Server,
-   
-   To access Folsom from Ubuntu archive, please add the following entries to your /etc/apt/sources.list:
-   deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/folsom main
-   For more information `follow this link <http://www.ubuntu.com/download/help/cloud-archive-instructions>`_ steps to access OpenStack Folsom archives
-
-* After you install Ubuntu 12.10 Server 64bits,
-
-   sudo su
-
-* Update your system::
-
-   apt-get update
-   apt-get upgrade
-   apt-get dist-upgrade
-
-8.2.Networking
-------------
-
-* 4 NICs must be present::
-   
-    # This file describes the network interfaces available on your system
-    # and how to activate them. For more information, see interfaces(5).
-
-    # The loopback network interface
-    auto lo
-    iface lo inet loopback
-
-    # The primary network interface - Virtual Box NAT connection
-    auto eth3
-    iface eth3 inet dhcp
-
-
-    # vboxnet0  - OpenStack Management Netowork
-    auto eth0
-    iface eth0 inet static
-    address 100.10.10.52
-    netmask 255.255.255.0
-    gateway 100.10.10.1
-
-    # vboxnet1 - OpenStack VM Conf. Network
-    auto eth1
-    iface eth1 inet static
-    address 100.20.20.52
-    netmask 255.255.255.0
-    gateway 100.20.20.1
-
-    # vboxnet2 - Expose OpenStack API's to external network.
-    auto eth2
-    iface eth2 inet static
-    address 192.168.100.52
-    netmask 255.255.255.0
-    gateway 192.168.100.1
-
-
-For the remaining Installation Follow `OpenStack-Folsom-Install-guide 3. Network Node <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
-
-
-9. Compute Node
-==============
-
-9.1. Preparing the Node
-------------------
-
-
-* If your installation is Ubuntu 12.04 Server,
-   
-   To access Folsom from Ubuntu archive, please add the following entries to your /etc/apt/sources.list:
-   deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/folsom main
-   For more information `follow this link <http://www.ubuntu.com/download/help/cloud-archive-instructions>`_ steps to access OpenStack Folsom archives
-
-* After you install Ubuntu 12.10 Server 64bits,
-
-   sudo su
-
-* Update your system::
-
-   apt-get update
-   apt-get upgrade
-   apt-get dist-upgrade
-
-9.2.Networking
-------------
-
-* 3 NICs must be present::
-                                           
-
-    # This file describes the network interfaces available on your system
-    # and how to activate them. For more information, see interfaces(5).
-    
-    # The loopback network interface
-    auto lo
-    iface lo inet loopback
-    
-    # The primary network interface - Virtual Box NAT connection
-    auto eth2
-    iface eth2 inet dhcp
-    
-    # Virtual Box vboxnet0 - Openstack Management Network
-    auto eth0
-    iface eth0 inet static
-    address 100.10.10.53
-    netmask 255.255.255.0
-    gateway 100.10.10.1
-    
-    # Virtual Box vboxnet1 - for exposing Openstack API over external network
-    auto eth1
-    iface eth1 inet static
-    address 100.20.20.53
-    netmask 255.255.255.0
-    gateway 100.20.20.1
-    
-    
-    
-For the remaining Installation Follow `OpenStack-Folsom-Install-guide 4. Compute Node <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
-
-After Finishing With the Guide's Steps ... please do the following Changes.
-
 9.3 KVM
 ------------------
 
@@ -654,7 +310,7 @@ Open browser on your Host Machine and paste the following link http://192.168.10
 12. Licensing
 ============
 
-OpenStack Folsom VM SandBox Guide by Pranav Salunke is licensed under a Creative Commons Attribution 3.0 Unported License.
+OpenStack Grizzly VM SandBox Guide by Pranav Salunke is licensed under a Creative Commons Attribution 3.0 Unported License.
 
 .. image:: http://i.imgur.com/4XWrp.png
 To view a copy of this license, visit [ http://creativecommons.org/licenses/by/3.0/deed.en_US ].
@@ -671,7 +327,7 @@ Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 This work has been supported by:
 
 * Cloud Rack - Checkout Cloud Rack at -[https://github.com/cloud-rack]
-* Manoj-Gudi - A Hacker friend of mine !!! - check his repo at - [https://github.com/manojgudi]
+
 
 15. Credits
 =================
