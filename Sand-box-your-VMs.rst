@@ -4,7 +4,7 @@
 
 :Version: 0.4
 :Source: https://github.com/mseknibilel/OpenStack-Folsom-Install-guide
-:Keywords: Multi node OpenStack, Folsom, Quantum, Nova, Keystone, Glance, Horizon, Cinder, OpenVSwitch, KVM, Ubuntu Server 12.10 (64 bits), Ubuntu Server 12.04, Virtual Box, Sand-Boxing, VmWare, Virtual Networks, QEmu, Kvm.
+:Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
 Authors
 ==========
@@ -24,16 +24,14 @@ Table of Contents
   4. Install SSH and FTP
   5. Install Your VM's Instances
   6. Its about to get sticky
-  7. Controller Node
-  8. Network Node
-  9. Compute Node
-  10. Launch OpenStack Horizon Dashboard
-  11. Word Of Advice
-  12. Licensing
-  13. Contacts
-  14. Acknowledgment
-  15. Credits
-  16. To do
+  7. All in one node (Control + Compute + Quantum)
+  8. Launch OpenStack Horizon Dashboard
+  9. Word Of Advice
+  10. Licensing
+  11. Contacts
+  12. Acknowledgment
+  13. Credits
+  14. To do
 
 0. What is it?
 ==============
@@ -103,6 +101,8 @@ Status: Beta2
 * Don't worry you will still be able to use Virtual Box but it will be very slow, so I must consider putting the requirements to be Patience or VT enabled processor ;).
 
 * Well there are many ways to configure you OpenStack installation but I am going to follow `OpenStack-Folsom-Install-guide <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
+
+* This time I am going to cover all types of networks/ installations that are covered by the above mentioned guide. Although it is pretty obvious and easy to deploy other types of installations once you understand what happens in this one, but still I have my exams and nothing better to do!
 
 
 There are two different types of configurations that are possible for setting up of Virtual Networks.
