@@ -24,7 +24,7 @@ Table of Contents
   4. Install SSH and FTP
   5. Install Your VM's Instances
   6. Its about to get sticky
-  7. All in one node (Control + Compute + Quantum)
+  7. Single Node (Control + Compute + Quantum)
   8. Launch OpenStack Horizon Dashboard
   9. Word Of Advice
   10. Licensing
@@ -115,10 +115,7 @@ There are two different types of configurations that are possible for setting up
 
 
   :Node Role: NICs
-  :Control Node: eth0 (100.10.10.51), eth1 (192.168.100.51)
-  :Network Node: eth0 (100.10.10.52), eth1 (100.20.20.52), eth2 (192.168.100.52)
-  :Compute Node: eth0 (100.10.10.53), eth1 (100.20.20.53)
-
+  :Single Node: eth0 (10.10.100.51), eth1 (192.168.100.51)
 
 
 .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/Diagrams/With%20Bridged%20Network%20Connection.jpeg
