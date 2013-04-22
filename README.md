@@ -5,7 +5,9 @@ Under Developement - Do not follow until you really know what you are up to !!!
 
 This is a guide for Stackers who want to have a more simpler, step by step process to deploy OpenStack Grizzly using Virtual Machines.
 
-I will not be putting up VMware related guide this time, if you still want this fell free to drop an email at : pps.pranav@gmail.com
+![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
+
+**Note :** I will skip VMware guide this time, if you still want this fell free to drop an email at : pps.pranav@gmail.com
 
 * A short Decription:
  
@@ -13,10 +15,10 @@ I will not be putting up VMware related guide this time, if you still want this 
    
   * [Virtual Box] (https://www.virtualbox.org/) is OpenSource virtualization software which is a bit noob-proof and agrees more with Geeks. But it supports more options and provides an API for managing, controlling Virtual Machines and other related settings.
 
-![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
+
 
 * For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link(v0.4 - Ready to be Used. Happy Stacking):
-  * [OpenStack-Folsom-VM-SandBoxing-Guide with Virtual Box]()
+  * [OpenStack-Grizzly-VM-SandBoxing-Guide with Virtual Box]()
 
 
 * For Advanced Users who know all about virtualization - or do not want to use Virtual Machines for OpenStack deployment should check out:
@@ -37,4 +39,4 @@ Happy Stacking!!!
 <br />
 This work (<span property="dct:title">OpenStack-Grizzly-VM-Install-Guide</span>, by <a href="https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide" rel="dct:creator"><span property="dct:title">Dguitarbite</span></a>), identified by <a href="https://github.com/dguitarbite" rel="dct:publisher"><span property="dct:title">Pranav Salunke</span></a>, is free of known copyright restrictions.
 </p>
-Note: This guide is in progress and is not adviced to be reffered to until you really know what you are doing.
+Note: This guide is in progress and is not adviced to be referred to until you really know what you are doing.
