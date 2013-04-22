@@ -18,7 +18,7 @@ This is a guide for Stackers who want to have a more simpler, step by step proce
 
 
 * For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link(v0.4 - Ready to be Used. Happy Stacking):
-  * [OpenStack-Grizzly-VM-SandBoxing-Guide with Virtual Box]()
+  * [OpenStack-Grizzly-VM-SandBoxing-Guide with Virtual Box](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/Sand-box-your-VMs.rst)
 
 
 * For Advanced Users who know all about virtualization - or do not want to use Virtual Machines for OpenStack deployment should check out:
