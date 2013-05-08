@@ -7,7 +7,7 @@ This is a guide for Stackers who want to have a more simpler, step by step proce
 
 ![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
 
-**Note :** I will skip VMware guide this time, if you still want this fell free to drop an email at : pps.pranav@gmail.com
+**Note :** I will skip VMware guide this time, if you still want it fell free to drop me an email at : dguitarbite@gmail.com
 
 * A short Decription:
  
