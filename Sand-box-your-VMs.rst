@@ -2,7 +2,7 @@
   OpenStack Folsom VM SandBox and Install Guide
 ==========================================================
 
-:Version: 0.4
+:Version: 0.5
 :Source: https://github.com/mseknibilel/OpenStack-Folsom-Install-guide
 :Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
@@ -43,23 +43,19 @@ These Virtual Machines and Virtual Networks will be given equal privilege as a p
 For learning more follow these links:
 
 OpenStack:
-  1.I am using **OpenStack Folsom Install Guide** by  **SkiBLE mseknibilel** as it is well written, easy and tested by 
-  Open Source geeks, with regular updates. 
-  You can find OpenStack Folsom Install Guide link `here <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide>`_
+  1.I am using `**OpenStack Grizzly Install Guide** <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/>`_ by  **SkiBLE mseknibilel** as it is well written, easy and tested by Stackers, with regular updates. 
   
-  2.If you want to blow your brains out then you can refer the OpenStack Official Website which contains all the related 
-  Documentation, API's, guides , Wiki's etc. Access the OpenStack Official Website `here <http://www.openstack.org/>`_
+  2.If you want to blow your brains out then you can refer the OpenStack Official Website which contains all the related Documentation, API's, guides , Wiki's etc. Access the OpenStack Official Website `here <http://www.openstack.org/>`_
 
 
 Networking:
-  1.Basic Networking concepts are necessary but can be ignored, if you want to dig into the field of networking I would 
-  suggest `Computer Networks (5th Edition) by Andrew S. Tanenbaum <http://www.amazon.com/Computer-Networks-5th-Andrew-Tanenbaum/dp/0132126958>`_  is an awesome one to learn networking 
+  1.Basic Networking concepts are necessary but can be ignored, if you want to dig into the field of networking I would suggest `Computer Networks (5th Edition) by Andrew S. Tanenbaum <http://www.amazon.com/Computer-Networks-5th-Andrew-Tanenbaum/dp/0132126958>`_  is an awesome one to learn networking 
   
   2.For learning Virtual Networking or Networking for Virtual Machines the following guide by Virtual Box `here <http://www.virtualbox.org/manual/ch06.html>`_  should suffice.
   **Note :** This is required as further in the guide these Concepts will be handy and you need to know what kind of networks you are setting up as there will be nesting of networks , meaning Virtual Networks inside Virtual Networks.
 
 Virtualization:
-  1.To Learn Virtualization, go through the Virtual Box Guide `here <http://www.virtualbox.org/manual/UserManual.html>`_, this should be sufficient to provide a fair idea on Virtualization relateed concepts.
+  1.To Learn Virtualization, go through the Virtual Box Guide `here <http://www.virtualbox.org/manual/UserManual.html>`_, this should be sufficient to provide a fair idea on Virtualization related concepts.
   
   2.Virtual Box provides User Interface and API for using it, although API will provide more flexibility, UI will have lesser learning curve, its up to you. I will try to provide both if time permits but I have to remind my-selves that this guide is meant for OpenStack sand-boxing :).
   You can access the API's for advanced networking `here <https://www.virtualbox.org/wiki/Advanced_Networking_Linux>`_.
@@ -68,7 +64,7 @@ Linux:
   1.You will need some basic knowledge of Linux` and Shell Programming otherwise you will go through tremendous torture of blindly following these Guides and if in case you end up with an error/dead lock, you will get stuck for silly reasons. There are many books, docs available and I don't know which one to recommend so please `Google <https://www.google.com/>`_ it.
 
 
-Version 0.4
+Version 0.5
 
 Status: Beta2
 
@@ -88,19 +84,19 @@ Status: Beta2
   :Non-VT PC's: Intel Core 2 Duo or Amd Dual Core
   :2GB Ram: DDR2/DDR3
 
-* If you dont know wether your processor is VT enabled, you could check it by installing **cpu checker**
+* If you don't know weather your processor is VT enabled, you could check it by installing **cpu checker**
   ::
     $sudo apt-get install cpu-checker
     $sudo kvm-ok
   
-* If your pc does not support VT it will show
+* If your device does not support VT it will show
   ::
     INFO: Your CPU does not support KVM extensions
     KVM acceleration can NOT be used
           
 * Don't worry you will still be able to use Virtual Box but it will be very slow, so I must consider putting the requirements to be Patience or VT enabled processor ;).
 
-* Well there are many ways to configure you OpenStack installation but I am going to follow `OpenStack-Folsom-Install-guide <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
+* Well there are many ways to configure you OpenStack installation but I am going to follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst>`_
 
 * This time I am going to cover all types of networks/ installations that are covered by the above mentioned guide. Although it is pretty obvious and easy to deploy other types of installations once you understand what happens in this one, but still I have my exams and nothing better to do!
 
@@ -109,9 +105,9 @@ There are two different types of configurations that are possible for setting up
 
 **1. Bridged Connections :** 
 ------------
-* Bridged Connection connects your VM as if its a physical machine. This means that your machine will be able to use internet and can be traced from other machines from internet. So if your network has a physical switch or you can spare a few IP addresses then I would suggest bridged connection.
+* Bridged Connection connects your VM as if its a physical machine. This means that your machine will be able to use Internet and can be traced from other machines from Internet. So if your network has a physical switch or you can spare a few IP addresses then I would suggest bridged connection.
 
-* Advantage of bridged connections is that your networks remain the same and you are free of the hassels of creating virtual networks.
+* Advantage of bridged connections is that your networks remain the same and you are free of the hassles of creating virtual networks.
 
 
   :Node Role: NICs
@@ -124,11 +120,11 @@ There are two different types of configurations that are possible for setting up
 
 **2. Host Only Connections:** 
 ------------
-* Host only connections provide an internet network between your host and the Virtual Machine instances up and running on your host machine. This network is not traceable by other networks.
+* Host only connections provide an Internet network between your host and the Virtual Machine instances up and running on your host machine. This network is not traceable by other networks.
 
 * The following are the host only connections that you will be setting up later on :
 
-  1. vboxnet0 - Openstack Management Network - Host static IP 100.10.10.1 
+  1. vboxnet0 - OpenStack Management Network - Host static IP 100.10.10.1 
   2. vboxnet1 - VM Conf. Network - Host Static IP 100.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
 
@@ -138,7 +134,7 @@ There are two different types of configurations that are possible for setting up
 2. Setup Your VM Environment
 ==============
 
-* Well a few of these sections will be full of screenshots because it is essential for people to understand some of the networking related configurations so please bear with me since its quite necessary to put it up.
+* Well a few of these sections will be full of screen-shots because it is essential for people to understand some of the networking related configurations so please bear with me since its quite necessary to put it up.
 
 * Before you can start configuring your Environment you need to download some of the following stuff:
 
@@ -153,12 +149,12 @@ There are two different types of configurations that are possible for setting up
           * For Testing this guide on a Non-VT enabled Machine.
         * **Machine 2** -Ubuntu 12.10 amd64 (Intel i5 2nd gen (VT enabled), 8GB Ram DDR3)
           * For Testing this guide on a VT enabled Machine.
-        **Note :** Im using only one machine for Deploying OpenStack. These two machines are for Testing.
+        **Note :** I'm using only one machine for Deploying OpenStack. These two machines are for Testing.
 
         * Please do consider using quad core processors as they are VT enabled. Which is required for virtualization.
           At the worst case go for a dual core processor.
 
-**Note:** Even Though Im using Ubuntu as Host, the same is applicable to Windows, Mac and other Linux Hosts. 
+**Note:** Even Though I'm using Ubuntu as Host, the same is applicable to Windows, Mac and other Linux Hosts. 
 
 * If you have i5 or i7 2nd gen processor you can have VT technology inside VM's provided by VmWare. This means that your OpenStack nodes(Which are in turn VM's) will give positive result on KVM-OK. (I call it - Nesting of type-2 Hypervisors). Rest of the configurations remain same except for the UI and few other trivial differences.
 
@@ -170,7 +166,7 @@ There are two different types of configurations that are possible for setting up
 4. Install SSH and FTP
 ==============
 
-* **This is for begineers ... experts keep your curses in your bags for including such a nooby section in this guide**
+* **This is for beginners ... experts keep your curses in your bags for including such a nooby section in this guide**
 
 * I feel that there is a need to install SSH and FTP so that you could use your remote shell to login into the machine and use your terminal which is more convenient that using the Virtual Machines tty through the Virtual Box's  UI. You get a few added comforts like copy - paste commands into the remote terminal which is not possible directly on VM.
 
@@ -197,38 +193,37 @@ There are two different types of configurations that are possible for setting up
 * Well there are a few warnings that I must give you out of experience due to stupid habits that normal Users like me have -
     1. Never Shutdown your Virtual Machine - just save its state Virtual Box and VmWare both provide it.
        In past this has broken NOVA packages , NOVA database, other errors have risen. I had to go restart each and every NOVA service on Control and Compute node. Believe me sometimes they can be pain in ass as they refuse to start up on reboot.
-       Once you configure up the messy part of Quantum Floating Ip's etc., honestly you dont want to re do it cause the settings get lost on reboot/shutdown.
+       Once you configure up the messy part of Quantum Floating IP's etc., honestly you don't want to re do it cause the settings get lost on reboot/shutdown.
        Linux Servers are meant to be running 24x7 ... so no need for restarts until required. 
-    2. If you are using bridged connection over a different physical router and have a seperate Internet connection/network ... then you can put up additional network interface NAT connections on your VM's for giving them Internet Access.
-    3. VmWare NAT connection has minimal functionality issues. Virtual Box NAT connection is a bad boy - will disconnect or not work properly many times. So if your VM's are not getting internet connection do not panic ... follow these steps
+    2. If you are using bridged connection over a different physical router and have a separate Internet connection/network ... then you can put up additional network interface NAT connections on your VM's for giving them Internet Access.
+    3. VmWare NAT connection has minimal functionality issues. Virtual Box NAT has improved a lot over the last few connections although in case the connection will disconnect or not work properly many times, VM's are not getting Internet connection do not panic ... follow these steps
     ::
-        // Use ping command to see whether internet is on.
-        $ping google.com
+        // Use ping command to see whether Internet is on.
+        $ping www.google.com
         // If its not connected restart networking service-
         $sudo service networking restart
         // Now Ping again
-        $ping google.com
+        $ping www.google.com
 
-* This should reconnect your network about 99% of the times. If you are really unlucky you must be having some other problems or your internet connection itself is not functioning... well try to avoid immature decisions. Believe me you dont want to mess up your existing setup.
+* This should reconnect your network about 99% of the times. If you are really unlucky you must be having some other problems or your Internet connection itself is not functioning... well try to avoid immature decisions. Believe me you don't want to mess up your existing setup.
 
-**If you have Reached till here - Congrats. I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is goign to start**
+**If you have Reached till here - Congrats. I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is going to start**
 -------------
 
 7. Single Node
 ==============
 
-7.1. Preparing Ubuntu 12.10/12.04
+7.1. Preparing Ubuntu 13.04/12.04
 ------------
 
-* If your installation is Ubuntu 12.04 Server,
-   
-   To access Folsom from Ubuntu archive, please add the following entries to your /etc/apt/sources.list:
-   deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/folsom main
-   For more information `follow this link <http://www.ubuntu.com/download/help/cloud-archive-instructions>`_ steps to access OpenStack Folsom archives
-
-* After you install Ubuntu 12.10 Server 64bits,
+* After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
 
    sudo su
+
+* Add Grizzly repositories::
+
+   apt-get install ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
+   echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/grizzly main >> /etc/apt/sources.list.d/grizzly.list
 
 * Update your system::
 
@@ -242,7 +237,7 @@ There are two different types of configurations that are possible for setting up
 
 Configure your network by editing :: /etc/network/interfaces file
 
-* Only one NIC on the controller node need internet access::
+* Only one NIC on the controller node need Internet access::
   
     # NAT should be preconfigured otherwise can copy the following ...
     # This file describes the network interfaces available on your system
@@ -256,14 +251,14 @@ Configure your network by editing :: /etc/network/interfaces file
     auto eth2
     iface eth2 inet dhcp
     
-    # Virtual Box vboxnet0 - Openstack Management Network
+    # Virtual Box vboxnet0 - OpenStack Management Network
     auto eth0
     iface eth0 inet static
-    address 100.10.10.51
+    address 10.10.100.51
     netmask 255.255.255.0
-    gateway 100.10.10.1
+    gateway 10.10.100.1
   
-    # Virtual Box vboxnet2 - for exposing Openstack API over external network
+    # Virtual Box vboxnet2 - for exposing OpenStack API over external network
     auto eth1
     iface eth1 inet static
     address 192.168.100.51
@@ -272,13 +267,13 @@ Configure your network by editing :: /etc/network/interfaces file
 
 
 
-For the remaining Installation Follow `OpenStack-Folsom-Install-guide 2. Control Node <https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst>`_
+For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
 
 
-9.3 KVM
+7.3 KVM
 ------------------
 
-* your hardware does not support virtualization because it is a virtual machine itselves ::
+* your hardware does not support virtualization because it is a virtual machine it-selves ::
 
    apt-get install cpu-checker
    kvm-ok
@@ -292,36 +287,36 @@ For the remaining Installation Follow `OpenStack-Folsom-Install-guide 2. Control
    
 * Now if you try to launch virtual machine instances they will work. 
 
-**Note :** This is for SandBoxing purposes only. Ideal for learning and testing, checking out OpenStack. If you want proper working you must have physical machines working.
+**Note :** This is for Sand Boxing purposes only. Ideal for learning and testing, checking out OpenStack. If you want proper working you must have physical machines working.
 
-10. Launch OpenStack Horizon Dashboard
+8. Launch OpenStack Horizon Dashboard
 ==============
 Open browser on your Host Machine and paste the following link http://192.168.100.51/horizon and you should see login page.
 
 .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/4.Final%20Step/Final.png
 
-11. Word Of Advice.
+9. Word Of Advice.
 ==============
 
 * On any condition do not restart - shutdown your VM's, just Save the machine state.
 * Try not to modify virtual machines LAN card's mac address, it will requrie you to modify your network interfaces page.
 
 
-12. Licensing
+10. Licensing
 ============
 
-OpenStack Grizzly VM SandBox Guide by Pranav Salunke is licensed under a Creative Commons Attribution 3.0 Unported License.
+OpenStack Grizzly VM Sand Box Guide by Pranav Salunke is licensed under a Creative Commons Attribution 3.0 Unported License.
 
 .. image:: http://i.imgur.com/4XWrp.png
 To view a copy of this license, visit [ http://creativecommons.org/licenses/by/3.0/deed.en_US ].
 
-13. Contacts
+11. Contacts
 ===========
 
 Pranav Salunke: pps.pranav@gmail.com
 Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 
-14. Acknowledgment
+12. Acknowledgment
 =================
 
 This work has been supported by:
@@ -329,7 +324,7 @@ This work has been supported by:
 * Cloud Rack - Checkout Cloud Rack at -[https://github.com/cloud-rack]
 
 
-15. Credits
+13. Credits
 =================
 
 This work has been based on:
@@ -339,7 +334,7 @@ This work has been based on:
 * OpenStack Documentation [http://docs.openstack.org/trunk/openstack-compute/install/apt/content/]
 * OpenStack Quantum Install [http://docs.openstack.org/trunk/openstack-network/admin/content/ch_install.html]
 
-16. To do
+14. To do
 =======
 
 This guide is just a startup. Your suggestions are always welcomed.
