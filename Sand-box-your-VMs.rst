@@ -161,6 +161,47 @@ There are two different types of configurations that are possible for setting up
 3. Configure Virtual Networks 
 ==============
 
+* This section of the guide will help you setup your networks for your Virtual Machine.
+
+* **Note :** If you are using Bridged Connections you may skip this section.
+
+  1. Click on **File >> Preferences** present on the menu bar of Virtual Box.
+  2. Select the **Network** tab.
+  3. On the right side you will see an option to add *Host-Only* networks.
+      .. image:: addimagehere
+  4. Create three Host-Only Network Connections.
+  5. Edit the Host-Only Connections to have the following settings.
+      
+    * Vboxnet0
+
+      +------------+---------------+
+      |            |               |
+      +============+===============+
+      |            |               |
+      +------------+---------------+
+
+      .. image:: addimageurlhere
+      
+    * Vboxnet1
+
+      +------------+---------------+
+      |            |               |
+      +============+===============+
+      |            |               |
+      +------------+---------------+
+
+      .. image:: addimageurlhere
+
+    * Vboxnet2
+
+      +------------+---------------+
+      |            |               |
+      +============+===============+
+      |            |               |
+      +------------+---------------+
+
+      .. image:: addimageurlhere
+
 
 
 4. Install SSH and FTP
