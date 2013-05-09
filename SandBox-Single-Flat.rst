@@ -72,6 +72,10 @@ Status: Beta2
 1. Requirements
 =============
 
+* Operating Systems - Either Ubuntu Server 12.04 LTS or Ubuntu Server 13.04,
+  
+    **Note :** Ubuntu 12.10 is not supporting OpenStack Grizzly Packages. Ubuntu team has decided not to package Grizzly Packages for Ubuntu 12.10. Although OpenStack Folsom will be supported as usual.
+
 * Recommended Requirements.
   
 
@@ -96,9 +100,9 @@ Status: Beta2
           
 * Don't worry you will still be able to use Virtual Box but it will be very slow, so I must consider putting the requirements to be Patience or VT enabled processor ;).
 
-* Well there are many ways to configure you OpenStack installation but I am going to follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst>`_
+* Well there are many ways to configure your OpenStack Setup but I am going to follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst>`_
 
-* This time I am going to cover all types of networks/ installations that are covered by the above mentioned guide. Although it is pretty obvious and easy to deploy other types of installations once you understand what happens in this one, but still I have my exams and nothing better to do!
+* This time I am going to cover all types of networks/installations that are covered by the above mentioned guide. Although it is pretty obvious and easy to deploy other types of installations once you understand what happens in this one, but still I have my exams and nothing better to do!
 
 
 There are two different types of configurations that are possible for setting up of Virtual Networks.
@@ -224,9 +228,9 @@ There are two different types of configurations that are possible for setting up
 4. Install SSH and FTP
 ==============
 
-* **This is for beginners ... experts keep your curses in your bags for including such a nooby section in this guide**
+* **This is for beginners ... **
 
-* I feel that there is a need to install SSH and FTP so that you could use your remote shell to login into the machine and use your terminal which is more convenient that using the Virtual Machines tty through the Virtual Box's  UI. You get a few added comforts like copy - paste commands into the remote terminal which is not possible directly on VM.
+* You may benifit by installing SSH and FTP so that you could use your remote shell to login into the machine and use your terminal which is more convenient that using the Virtual Machines tty through the Virtual Box's  UI. You get a few added comforts like copy - paste commands into the remote terminal which is not possible directly on VM.
 
 * FTP is for transferring files to and fro ... you can also use SFTP or install FTPD on both HOST and VM's.
 
@@ -240,21 +244,19 @@ There are two different types of configurations that are possible for setting up
 
 * During Installation of The Operating Systems you will be asked for Custom Software to Install , if you are confused or not sure about this, just skip this step by pressing **Enter Key** without selecting any of the given Options.
 
-**Warning -** Please do not install any of the other packages except for which are mentioned below unless you know what you are doing. I have experienced unwanted errors, package conflicts ... due to the same.
+**Warning -** Please do not install any of the other packages except for which are mentioned below unless you know what you are doing. There is a good chance that you may end up getting unwanted errors, package conflicts ... due to the same.
 
 1. Single Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
 
+<<add some more info about the VM to be created and install ubuntu server 12.04 or 13.04>>
 
 6. Its about to get sticky
 ==============
 
 * Well there are a few warnings that I must give you out of experience due to stupid habits that normal Users like me have -
-    1. Never Shutdown your Virtual Machine - just save its state Virtual Box and VmWare both provide it.
-       In past this has broken NOVA packages , NOVA database, other errors have risen. I had to go restart each and every NOVA service on Control and Compute node. Believe me sometimes they can be pain in ass as they refuse to start up on reboot.
-       Once you configure up the messy part of Quantum Floating IP's etc., honestly you don't want to re do it cause the settings get lost on reboot/shutdown.
-       Linux Servers are meant to be running 24x7 ... so no need for restarts until required. 
+    1. Sometimes shutting down your Virtual Machine may lead to malfunctioning of OpenStack Services. Try not to direct shutdown your VMs. Saving your VM's State can save some time.
     2. If you are using bridged connection over a different physical router and have a separate Internet connection/network ... then you can put up additional network interface NAT connections on your VM's for giving them Internet Access.
-    3. VmWare NAT connection has minimal functionality issues. Virtual Box NAT has improved a lot over the last few connections although in case the connection will disconnect or not work properly many times, VM's are not getting Internet connection do not panic ... follow these steps
+    3. In case your VM's dont get internet
     ::
         // Use ping command to see whether Internet is on.
         $ping www.google.com
@@ -262,10 +264,9 @@ There are two different types of configurations that are possible for setting up
         $sudo service networking restart
         // Now Ping again
         $ping www.google.com
-
 * This should reconnect your network about 99% of the times. If you are really unlucky you must be having some other problems or your Internet connection itself is not functioning... well try to avoid immature decisions. Believe me you don't want to mess up your existing setup.
 
-**If you have Reached till here - Congrats. I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is going to start**
+**If you have Reached till here, I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is going to start**
 -------------
 
 7. Single Node
@@ -356,8 +357,8 @@ Open browser on your Host Machine and paste the following link http://192.168.10
 9. Word Of Advice.
 ==============
 
-* On any condition do not restart - shutdown your VM's, just Save the machine state.
-* Try not to modify virtual machines LAN card's mac address, it will requrie you to modify your network interfaces page.
+* On any condition do not restart - shutdown your VM's directly(Power Off Option), just Save the machine state if you dont have the time or paitence to shut down the nodes properly.
+* Try not to modify virtual machines LAN card's mac address, it will require you to modify your network interfaces page.
 
 
 10. Licensing
@@ -387,6 +388,7 @@ This work has been supported by:
 
 This work has been based on:
 
+* Bilel Msekni's Grizzly install gudie [https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide]
 * Bilel Msekni's Folsom install gudie [https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst]
 * Emilien Macchi's Folsom guide [https://github.com/EmilienM/openstack-folsom-guide]
 * OpenStack Documentation [http://docs.openstack.org/trunk/openstack-compute/install/apt/content/]
