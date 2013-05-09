@@ -168,7 +168,7 @@ There are two different types of configurations that are possible for setting up
   1. Click on **File >> Preferences** present on the menu bar of Virtual Box.
   2. Select the **Network** tab.
   3. On the right side you will see an option to add *Host-Only* networks.
-      .. image:: addimagehere
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/1.%20Virtual%20Network/Create%20Host%20Only%20Network.png
   4. Create three Host-Only Network Connections.
   5. Edit the Host-Only Connections to have the following settings.
       
@@ -186,7 +186,7 @@ There are two different types of configurations that are possible for setting up
       | IPv6 Network Mask Length : | **Can be Left Blank** |
       +----------------------------+-----------------------+
 
-      .. image:: addimageurlhere
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/1.%20Virtual%20Network/Configure%20Vboxnet0.png
       
     * Vboxnet1
 
@@ -202,7 +202,7 @@ There are two different types of configurations that are possible for setting up
       | IPv6 Network Mask Length : | **Can be Left Blank** |
       +----------------------------+-----------------------+
 
-      .. image:: addimageurlhere
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/1.%20Virtual%20Network/Configure%20Vboxnet1.png
             
     * Vboxnet2
 
@@ -218,7 +218,7 @@ There are two different types of configurations that are possible for setting up
       | IPv6 Network Mask Length : | **Can be Left Blank** |
       +----------------------------+-----------------------+
 
-      .. image:: addimageurlhere
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/1.%20Virtual%20Network/Configure%20Vboxnet2.png
       
 
 4. Install SSH and FTP
