@@ -384,7 +384,7 @@ This work has been supported by:
 
 * Aptira 
   
-  ` .. image:: http://aptira.com/images/logo.jpg <http://www.aptira.com>`_
+  `.. image:: http://aptira.com/images/logo.jpg <http://www.aptira.com>`_
   
   *+91 97129 29850
   *+612 8030 2333
