@@ -384,7 +384,7 @@ This work has been supported by:
 
 * Aptira 
   
-  ..image:: http://aptira.com/images/logo.jpg 
+  .. image:: http://aptira.com/images/logo.jpg 
   
   +91 97129 29850
   
