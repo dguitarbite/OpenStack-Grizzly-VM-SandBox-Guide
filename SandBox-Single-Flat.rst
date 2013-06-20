@@ -1,5 +1,5 @@
 ==========================================================
-  OpenStack Folsom VM SandBox and Install Guide
+  OpenStack Grizzly VM SandBox and Install Guide
 ==========================================================
 
 :Version: 0.5
@@ -383,11 +383,17 @@ Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 This work has been supported by:
 
 * Aptira 
+  
   ..image:: http://aptira.com/images/logo.jpg 
+  
   +91 97129 29850
+  
   +612 8030 2333
+  
   1800 APTIRA
+  
   aptira.com
+  
   Follow @aptira
 
 
