@@ -64,9 +64,9 @@ Linux:
   1.You will need some basic knowledge of Linux` and Shell Programming otherwise you will go through tremendous torture of blindly following these Guides and if in case you end up with an error/dead lock, you will get stuck for silly reasons. There are many books, docs available and I don't know which one to recommend so please `Google <https://www.google.com/>`_ it.
 
 
-Version 0.5
+Version 1.0
 
-Status: Beta2
+Status: RC
 
 
 1. Requirements
