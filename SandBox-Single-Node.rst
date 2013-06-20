@@ -2,14 +2,14 @@
   OpenStack Grizzly VM SandBox and Install Guide
 ==========================================================
 
-:Version: 0.5
+:Version: 1.0 (RC1)
 :Source: https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide
 :Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
 Authors
 ==========
 
-Copyright (C) Pranav Salunke <pps.pranav@gmail.com>
+Copyright (C) Pranav Salunke <dguitarbite@gmail.com>
 
 
 Table of Contents
