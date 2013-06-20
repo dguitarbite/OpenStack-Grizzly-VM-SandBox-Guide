@@ -118,9 +118,9 @@ There are two different types of configurations that are possible for setting up
   :Single Node: eth0 (10.10.100.51), eth1 (192.168.100.51)
 
 
-.. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/Diagrams/With%20Bridged%20Network%20Connection.jpeg
+.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/bridged.png
 
-**Note:** If you are using bridged connections you may skip this section as there is no need to set up host-only connections.
+**Note:** If you are using bridged connections you may skip this section (2. Host-Only )as there is no need to set up host-only connections.
 
 **2. Host Only Connections:** 
 ------------
@@ -132,7 +132,7 @@ There are two different types of configurations that are possible for setting up
   2. vboxnet1 - VM Conf. Network - Host Static IP 100.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
 
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/Diagrams/WIth%20Host%20only%20NetWork%20Connection.png
+    .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/hostonly.png
 
 
 2. Setup Your VM Environment
@@ -266,13 +266,15 @@ There are two different types of configurations that are possible for setting up
         $ping www.google.com
 * This should reconnect your network about 99% of the times. If you are really unlucky you must be having some other problems or your Internet connection itself is not functioning... well try to avoid immature decisions. Believe me you don't want to mess up your existing setup.
 
+**Note :** There are known bugs with the `ping` under NAT. Although the latest versions of Virtual Box have better performance, sometimes ping may not work even if your Network is connected to internet.
+
 **If you have Reached till here, I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is going to start**
 -------------
 
 7. Single Node
 ==============
 
-7.1. Preparing Ubuntu 13.04/12.04
+7.1. Preparing Ubuntu 13.04/12.0re4
 ------------
 
 * After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
@@ -380,7 +382,13 @@ Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 
 This work has been supported by:
 
-* Cloud Rack - Checkout Cloud Rack at -[https://github.com/cloud-rack]
+* Aptira 
+  ..image:: http://aptira.com/images/logo.jpg 
+  +91 97129 29850
+  +612 8030 2333
+  1800 APTIRA
+  aptira.com
+  Follow @aptira
 
 
 13. Credits
@@ -391,7 +399,7 @@ This work has been based on:
 * Bilel Msekni's Grizzly install gudie [https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide]
 * Bilel Msekni's Folsom install gudie [https://github.com/mseknibilel/OpenStack-Folsom-Install-guide/blob/master/OpenStack_Folsom_Install_Guide_WebVersion.rst]
 * Emilien Macchi's Folsom guide [https://github.com/EmilienM/openstack-folsom-guide]
-* OpenStack Documentation [http://docs.openstack.org/trunk/openstack-compute/install/apt/content/]
+* OpenStack Documentation [http://docs.openstack.org/]
 * OpenStack Quantum Install [http://docs.openstack.org/trunk/openstack-network/admin/content/ch_install.html]
 
 14. To do
@@ -399,4 +407,4 @@ This work has been based on:
 
 This guide is just a startup. Your suggestions are always welcomed.
 
-There are other ways of configuring your VM's. You can also have a mixture of 
+There are other ways of configuring your VM's. You can also use Physical Servers with Virtual Servers. Contact me for more details.
