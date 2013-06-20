@@ -17,7 +17,7 @@ This is a guide for Stackers who want to have a more simpler, step by step proce
 
 
 
-* For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link(v0.4 - Ready to be Used. Happy Stacking):
+* For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link:
   * [Single Node (OpenStack Grizzly)](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/SandBox-Single-Node.rst) , you may choose to use the required plugins as given in the OpenStack Documentation.
 
 
@@ -39,5 +39,3 @@ Happy Stacking!!!
 <br />
 This work (<span property="dct:title">OpenStack-Grizzly-VM-Install-Guide</span>, by <a href="https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide" rel="dct:creator"><span property="dct:title">Dguitarbite</span></a>), identified by <a href="https://github.com/dguitarbite" rel="dct:publisher"><span property="dct:title">Pranav Salunke</span></a>, is free of known copyright restrictions.
 </p>
-
-**Note :** This guide is in progress and is not adviced to be referred to until you really know what you are doing.
