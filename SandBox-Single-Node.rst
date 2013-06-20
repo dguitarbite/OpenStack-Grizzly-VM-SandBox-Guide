@@ -248,10 +248,43 @@ There are two different types of configurations that are possible for setting up
 
 1. Single Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
 
-<<add some more info about the VM to be created and install ubuntu server 12.04 or 13.04>>
+2. Configure the networks 
+  
+    * Host-Only
+    
+     Network Adapter | Host-Only Adapter Name |IP Address
+    -----------------|------------------------|-----------
+     eth0            | Vboxnet0               |10.10.100.51
+     eth1            | Vboxnet1               |192.168.100.51
+     eth2             | NAT                   |DHCP
+     
+    1. Adapter 0 (Vboxnet0)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/Host%20Only%201.png
+    
+    2. Adapter 1 (Vboxnet1)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/Host%20Only%202.png
+    
+    3. Adapter 2 (Vboxnet2)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/NAT.png
+    
 
-6. Its about to get sticky
-==============
+    * Bridged
+    
+     Network Adapter | IP Address
+    -----------------|-------------
+     eth0            |  10.10.100.51
+     eth1            |  192.168.100.51
+    
+    1. Adapter 0
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Bridged/Bridged%201.png
+    
+    2. Adapter 1
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Bridged/Bridged%202.png
 
 * Well there are a few warnings that I must give you out of experience due to stupid habits that normal Users like me have -
     1. Sometimes shutting down your Virtual Machine may lead to malfunctioning of OpenStack Services. Try not to direct shutdown your VMs. Saving your VM's State can save some time.
