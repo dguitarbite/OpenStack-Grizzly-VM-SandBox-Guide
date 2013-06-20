@@ -3,7 +3,7 @@
 ==========================================================
 
 :Version: 0.5
-:Source: https://github.com/mseknibilel/OpenStack-Folsom-Install-guide
+:Source: https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide
 :Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
 Authors
