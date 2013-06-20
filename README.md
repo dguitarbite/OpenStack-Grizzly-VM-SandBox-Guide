@@ -1,8 +1,6 @@
 OpenStack-Grizzly-VM-SandBox-Guide
 ==================================
 
-Under Developement - Do not follow until you really know what you are up to !!!
-
 This is a guide for Stackers who want to have a more simpler, step by step process to deploy OpenStack Grizzly using Virtual Machines.
 
 ![Rofl](https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/fun-graphics.jpg)
