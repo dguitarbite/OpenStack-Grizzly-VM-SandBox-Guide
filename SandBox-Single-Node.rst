@@ -354,7 +354,13 @@ For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://
 ==============
 Open browser on your Host Machine and paste the following link http://192.168.100.51/horizon and you should see login page.
 
-.. image:: https://raw.github.com/dguitarbite/OpenStack-Folsom-VM-SandBox-Guide/VirtualBox/Images/ScreenShots/4.Final%20Step/Final.png
+
+.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/3.Horizon%20Dashboard/Horizon1.png
+
+.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/3.Horizon%20Dashboard/Horizon%202.png
+
+.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/3.Horizon%20Dashboard/Horizon3.png
+
 
 9. Word Of Advice.
 ==============
