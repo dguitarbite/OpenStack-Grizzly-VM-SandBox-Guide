@@ -382,15 +382,11 @@ Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 
 This work has been supported by:
 
-* Aptira 
+* `Aptira <http://www.aptira.com>`_
   
-  `.. image:: http://aptira.com/images/logo.jpg <http://www.aptira.com>`_
-  
-  *+91 97129 29850
-  *+612 8030 2333
-  *1800 APTIRA
-  *aptira.com
-  *Follow @aptira
+  .. image:: http://aptira.com/images/logo.jpg
+    
+
 
 
 13. Credits
