@@ -2,7 +2,7 @@
   OpenStack Grizzly VM SandBox and Install Guide
 ==========================================================
 
-:Version: 0.7 (alpha2)
+:Version: 0.8 (Beta-1)
 :Source: https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide
 :Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
@@ -24,14 +24,16 @@ Table of Contents
   4. Install SSH and FTP
   5. Install Your VM's Instances
   6. Its about to get sticky
-  7. Single Node (Control + Compute + Quantum)
-  8. Launch OpenStack Horizon Dashboard
-  9. Word Of Advice
-  10. Licensing
-  11. Contacts
-  12. Acknowledgment
-  13. Credits
-  14. To do
+  7. Control Node 
+  8. Compute 
+  9. Quantum
+  10. Launch OpenStack Horizon Dashboard
+  11. Word Of Advice
+  12. Licensing
+  13. Contacts
+  14. Acknowledgment
+  15. Credits
+  16. To do
 
 0. What is it?
 ==============
@@ -115,10 +117,7 @@ There are two different types of configurations that are possible for setting up
 
 
   :Node Role: NICs
-  :Single Node: eth0 (10.10.100.51), eth1 (192.168.100.51)
-
-
-.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/bridged.png
+  :Single Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
 
 **Note:** If you are using bridged connections you may skip this section (2. Host-Only )as there is no need to set up host-only connections.
 
@@ -128,11 +127,9 @@ There are two different types of configurations that are possible for setting up
 
 * The following are the host only connections that you will be setting up later on :
 
-  1. vboxnet0 - OpenStack Management Network - Host static IP 100.10.10.1 
-  2. vboxnet1 - VM Conf. Network - Host Static IP 100.20.20.1
+  1. vboxnet0 - OpenStack Management Network - Host static IP 10.10.10.1 
+  2. vboxnet1 - VM Conf. Network - Host Static IP 10.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
-
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/hostonly.png
 
 
 2. Setup Your VM Environment
@@ -181,7 +178,7 @@ There are two different types of configurations that are possible for setting up
       +----------------------------+-----------------------+
       | Option                     |  Value                |
       +============================+=======================+
-      | IPv4 Address:              | 10.10.100.1           |
+      | IPv4 Address:              | 10.10.10.1           |
       +----------------------------+-----------------------+
       | IPv4 Network Mask:         | 255.255.255.0         |
       +----------------------------+-----------------------+
@@ -322,7 +319,7 @@ There are two different types of configurations that are possible for setting up
     
      Network Adapter | IP Address
     -----------------|-------------
-     eth0            |  10.10.100.52
+     eth0            |  10.10.10.52
      eth1            |  10.20.20.52
      eth2            |  192.168.100.52
     
@@ -399,8 +396,10 @@ There are two different types of configurations that are possible for setting up
 7. Control Node
 ==============
 
-7.1. Preparing Ubuntu 13.04/12.0re4
+7.1. Preparing Ubuntu 13.04/12.04
 ------------
+
+**Note :** Please Skip this (7.1) for Ubuntu 13.04. Ubuntu 12.10 dosent support Grizzly.
 
 * After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
 
@@ -426,10 +425,11 @@ Configure your network by editing :: /etc/network/interfaces file
 * Only one NIC on the controller node need Internet access::
   
     # NAT should be preconfigured otherwise can copy the following ...
+    # Important -- NAT (eth2) is not required for Bridged Connection.
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
 
-    # The loopback network interface
+    # The loopback network interface - for Host-Only
     auto lo
     iface lo inet loopback
     
@@ -440,9 +440,9 @@ Configure your network by editing :: /etc/network/interfaces file
     # Virtual Box vboxnet0 - OpenStack Management Network
     auto eth0
     iface eth0 inet static
-    address 10.10.100.51
+    address 10.10.10.51
     netmask 255.255.255.0
-    gateway 10.10.100.1
+    gateway 10.10.10.1
   
     # Virtual Box vboxnet2 - for exposing OpenStack API over external network
     auto eth1
@@ -460,6 +460,8 @@ For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://
 
 8.1. Preparing Ubuntu 13.04/12.0re4
 ------------
+
+**Note :** Please Skip this (8.1) for Ubuntu 13.04. Ubuntu 12.10 dosent support Grizzly.
 
 * After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
 
@@ -485,6 +487,7 @@ Configure your network by editing :: /etc/network/interfaces file
 * Only one NIC on the controller node need Internet access::
   
     # NAT should be preconfigured otherwise can copy the following ...
+    # Important -- NAT (eth2) is not required for Bridged Connection.
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
 
@@ -492,19 +495,26 @@ Configure your network by editing :: /etc/network/interfaces file
     auto lo
     iface lo inet loopback
     
-    # The primary network interface - Virtual Box NAT connection
-    auto eth2
+    # The primary network interface - Virtual Box NAT connection - for Host-Only
+    auto eth3
     iface eth2 inet dhcp
     
     # Virtual Box vboxnet0 - OpenStack Management Network
     auto eth0
     iface eth0 inet static
-    address 10.10.100.51
+    address 10.10.10.52
     netmask 255.255.255.0
-    gateway 10.10.100.1
+    gateway 10.10.10.1
+    
+    # Virtual Box vboxnet1 - for VM Internal Communication
+    auto eth1
+    iface eth1 inet static
+    address 10.20.20.52
+    netmask 255.255.255.0
+    gateway 10.20.20.1
   
     # Virtual Box vboxnet2 - for exposing OpenStack API over external network
-    auto eth1
+    auto eth2
     iface eth1 inet static
     address 192.168.100.51
     netmask 255.255.255.0
@@ -517,8 +527,10 @@ For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://
 9. Compute Node
 ==============
 
-9.1. Preparing Ubuntu 13.04/12.0re4
+9.1. Preparing Ubuntu 13.04/12.04
 ------------
+
+**Note :** Please Skip this (9.1) for Ubuntu 13.04. Ubuntu 12.10 dosent support Grizzly.
 
 * After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
 
@@ -544,6 +556,7 @@ Configure your network by editing :: /etc/network/interfaces file
 * Only one NIC on the controller node need Internet access::
   
     # NAT should be preconfigured otherwise can copy the following ...
+    # Important -- NAT (eth2) is not required for Bridged Connection.
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
 
@@ -551,25 +564,23 @@ Configure your network by editing :: /etc/network/interfaces file
     auto lo
     iface lo inet loopback
     
-    # The primary network interface - Virtual Box NAT connection
+    # The primary network interface - Virtual Box NAT connection - for Host-Only
     auto eth2
     iface eth2 inet dhcp
     
     # Virtual Box vboxnet0 - OpenStack Management Network
     auto eth0
     iface eth0 inet static
-    address 10.10.100.51
+    address 10.10.10.53
     netmask 255.255.255.0
-    gateway 10.10.100.1
+    gateway 10.10.10.1
   
-    # Virtual Box vboxnet2 - for exposing OpenStack API over external network
+    # Virtual Box vboxnet1 - VM Internal Communication Network
     auto eth1
     iface eth1 inet static
-    address 192.168.100.51
+    address 10.20.20.53
     netmask 255.255.255.0
-    gateway 192.168.100.1
-
-
+    gateway 10.20.20.1
 
 For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
 
@@ -636,9 +647,7 @@ This work has been supported by:
   .. image:: http://aptira.com/images/logo.jpg
     
 
-
-
-13. Credits
+15. Credits
 =================
 
 This work has been based on:
@@ -649,7 +658,7 @@ This work has been based on:
 * OpenStack Documentation [http://docs.openstack.org/]
 * OpenStack Quantum Install [http://docs.openstack.org/trunk/openstack-network/admin/content/ch_install.html]
 
-14. To do
+16. To do
 =======
 
 This guide is just a startup. Your suggestions are always welcomed.
