@@ -413,7 +413,7 @@ To view a copy of this license, visit [ http://creativecommons.org/licenses/by/3
 11. Contacts
 ===========
 
-Pranav Salunke: pps.pranav@gmail.com
+Pranav Salunke: dguitarbite@gmail.com
 Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 
 12. Acknowledgment
