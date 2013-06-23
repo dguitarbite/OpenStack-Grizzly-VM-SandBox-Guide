@@ -118,8 +118,6 @@ There are two different types of configurations that are possible for setting up
   :Single Node: eth0 (10.10.100.51), eth1 (192.168.100.51)
 
 
-.. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/bridged.png
-
 **Note:** If you are using bridged connections you may skip this section (2. Host-Only )as there is no need to set up host-only connections.
 
 **2. Host Only Connections:** 
@@ -131,9 +129,6 @@ There are two different types of configurations that are possible for setting up
   1. vboxnet0 - OpenStack Management Network - Host static IP 100.10.10.1 
   2. vboxnet1 - VM Conf. Network - Host Static IP 100.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
-
-    .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/Single%20Flat/hostonly.png
-
 
 2. Setup Your VM Environment
 ==============
