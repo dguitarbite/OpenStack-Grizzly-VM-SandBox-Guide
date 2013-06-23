@@ -18,7 +18,7 @@ This is a guide for Stackers who want to have a more simpler, step by step proce
 * For those who want to use `Virtual Box` for `OpenStack Sandboxing`, can check out the following link:
   * [Single Node ](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/SandBox-Single-Node.rst) , you may choose to use the required plugins as given in the OpenStack Documentation.
 
-  * [Multi Node ](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/SandBox-Multi-Node.rst)
+  * [Multi Node ](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/SandBox-Multi-Node.rst) , you may choose to use the required plugins as given in the OpenStack Documentation.
   
   * If you want to access your Horizon Dashboard and other API's from external network / internet check out [port forwarding](https://github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/blob/master/Port%20Forwarding.rst)
 
