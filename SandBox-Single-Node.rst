@@ -2,7 +2,7 @@
   OpenStack Grizzly VM SandBox and Install Guide
 ==========================================================
 
-:Version: 1.0 (RC1)
+:Version: 0.7 (alpha2)
 :Source: https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide
 :Keywords: Single node OpenStack, Grizzly, Quantum, Nova, Keystone, Glance, Horizon, Cinder, LinuxBridge, KVM, Ubuntu Server 12.04 (64 bits).
 
@@ -246,45 +246,137 @@ There are two different types of configurations that are possible for setting up
 
 **Warning -** Please do not install any of the other packages except for which are mentioned below unless you know what you are doing. There is a good chance that you may end up getting unwanted errors, package conflicts ... due to the same.
 
-1. Single Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
 
-2. Configure the networks 
+1. Control Node: Install **SSH server** when asked for **Custom Software to Install**. Rest of the packages are not required and may come in the way of OpenStack packages - like DNS servers etc. (not necessary). Unless you know what you are doing.
+
+   Configure the networks 
   
     * Host-Only
     
      Network Adapter | Host-Only Adapter Name |IP Address
     -----------------|------------------------|-----------
-     eth0            | Vboxnet0               |10.10.100.51
-     eth1            | Vboxnet1               |192.168.100.51
-     eth2             | NAT                   |DHCP
-     
+     eth0            | Vboxnet0               |10.10.10.51
+     eth1            | Vboxnet2               |10.20.20.51
+     eth2            | NAT                    |DHCP
+
     1. Adapter 0 (Vboxnet0)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/Host%20Only%201.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network1.png
     
-    2. Adapter 1 (Vboxnet1)
+    2. Adapter 1 (Vboxnet2)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/Host%20Only%202.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network2.png
     
-    3. Adapter 2 (Vboxnet2)
+    3. Adapter 2 (NAT)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Host%20Only/NAT.png
-    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network3.png
 
-    * Bridged
+   * Bridged
     
      Network Adapter | IP Address
     -----------------|-------------
-     eth0            |  10.10.100.51
+     eth0            |  10.10.10.51
      eth1            |  192.168.100.51
     
     1. Adapter 0
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Bridged/Bridged%201.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network1.png
     
     2. Adapter 1
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Single%20Node/Bridged/Bridged%202.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network2.png
+
+
+2. Network Node: Same as Control Node.
+
+   Configure the networks 
+  
+    * Host-Only
+    
+     Network Adapter | Host-Only Adapter Name |IP Address
+    -----------------|------------------------|-----------
+     eth0            | Vboxnet0               |10.10.10.52
+     eth1            | Vboxnet1               |10.20.20.52
+     eth2            | Vboxnet2               |192.168.100.51
+     eth3            | NAT                    |DHCP
+
+
+    1. Adapter 0 (Vboxnet0)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network%201.png
+    
+    2. Adapter 1 (Vboxnet1)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network2.png
+    
+    3. Adapter 2 (Vboxnet2)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network3.png
+    
+    4. Adapter 3 (NAT)
+    
+      ..image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network4.png
+      
+      
+    * Bridged
+    
+     Network Adapter | IP Address
+    -----------------|-------------
+     eth0            |  10.10.100.52
+     eth1            |  10.20.20.52
+     eth2            |  192.168.100.52
+    
+    1. Adapter 0
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Briged1.png
+    
+    2. Adapter 1
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged2.png
+
+    3. Adapter 2
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged3.png
+
+3. Compute Node: Same as Control Node.
+
+   Configure the networks 
+  
+    * Host-Only
+    
+     Network Adapter | Host-Only Adapter Name |IP Address
+    -----------------|------------------------|-----------
+     eth0            | Vboxnet0               |10.10.10.53
+     eth1            | Vboxnet1               |10.20.20.53
+     eth2            | NAT                    |DHCP
+
+    1. Adapter 0 (Vboxnet0)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network1.png
+    
+    2. Adapter 1 (Vboxnet1)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network2.png
+    
+    3. Adapter 2 (NAT)
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network3.png
+
+   * Bridged
+    
+     Network Adapter | IP Address
+    -----------------|-------------
+     eth0            |  10.10.10.51
+     eth1            |  10.20.20.53
+    
+    1. Adapter 0
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network1.png
+    
+    2. Adapter 1
+    
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network2.png
+
 
 * Well there are a few warnings that I must give you out of experience due to stupid habits that normal Users like me have -
     1. Sometimes shutting down your Virtual Machine may lead to malfunctioning of OpenStack Services. Try not to direct shutdown your VMs. Saving your VM's State can save some time.
@@ -304,7 +396,7 @@ There are two different types of configurations that are possible for setting up
 **If you have Reached till here, I would suggest a coffee break because now the Virtual Machines installation is nearly over and OpenStack's installation part is going to start**
 -------------
 
-7. Single Node
+7. Control Node
 ==============
 
 7.1. Preparing Ubuntu 13.04/12.0re4
@@ -363,8 +455,126 @@ Configure your network by editing :: /etc/network/interfaces file
 
 For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
 
+8. Network Node
+==============
 
-7.3 KVM
+8.1. Preparing Ubuntu 13.04/12.0re4
+------------
+
+* After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
+
+   sudo su
+
+* Add Grizzly repositories::
+
+   apt-get install ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
+   echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/grizzly main >> /etc/apt/sources.list.d/grizzly.list
+
+* Update your system::
+
+   apt-get update
+   apt-get upgrade
+   apt-get dist-upgrade
+
+
+8.2.Networking
+------------
+
+Configure your network by editing :: /etc/network/interfaces file
+
+* Only one NIC on the controller node need Internet access::
+  
+    # NAT should be preconfigured otherwise can copy the following ...
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+    
+    # The primary network interface - Virtual Box NAT connection
+    auto eth2
+    iface eth2 inet dhcp
+    
+    # Virtual Box vboxnet0 - OpenStack Management Network
+    auto eth0
+    iface eth0 inet static
+    address 10.10.100.51
+    netmask 255.255.255.0
+    gateway 10.10.100.1
+  
+    # Virtual Box vboxnet2 - for exposing OpenStack API over external network
+    auto eth1
+    iface eth1 inet static
+    address 192.168.100.51
+    netmask 255.255.255.0
+    gateway 192.168.100.1
+
+
+
+For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+
+9. Compute Node
+==============
+
+9.1. Preparing Ubuntu 13.04/12.0re4
+------------
+
+* After you install Ubuntu 12.04 Server 64bits, Go in sudo mode and don't leave it until the end of this guide::
+
+   sudo su
+
+* Add Grizzly repositories::
+
+   apt-get install ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
+   echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/grizzly main >> /etc/apt/sources.list.d/grizzly.list
+
+* Update your system::
+
+   apt-get update
+   apt-get upgrade
+   apt-get dist-upgrade
+
+
+9.2.Networking
+------------
+
+Configure your network by editing :: /etc/network/interfaces file
+
+* Only one NIC on the controller node need Internet access::
+  
+    # NAT should be preconfigured otherwise can copy the following ...
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+    
+    # The primary network interface - Virtual Box NAT connection
+    auto eth2
+    iface eth2 inet dhcp
+    
+    # Virtual Box vboxnet0 - OpenStack Management Network
+    auto eth0
+    iface eth0 inet static
+    address 10.10.100.51
+    netmask 255.255.255.0
+    gateway 10.10.100.1
+  
+    # Virtual Box vboxnet2 - for exposing OpenStack API over external network
+    auto eth1
+    iface eth1 inet static
+    address 192.168.100.51
+    netmask 255.255.255.0
+    gateway 192.168.100.1
+
+
+
+For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+
+
+9.3 KVM
 ------------------
 
 * your hardware does not support virtualization because it is a virtual machine it-selves ::
@@ -383,7 +593,7 @@ For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://
 
 **Note :** This is for Sand Boxing purposes only. Ideal for learning and testing, checking out OpenStack. If you want proper working you must have physical machines working.
 
-8. Launch OpenStack Horizon Dashboard
+10. Launch OpenStack Horizon Dashboard
 ==============
 Open browser on your Host Machine and paste the following link http://192.168.100.51/horizon and you should see login page.
 
@@ -395,14 +605,14 @@ Open browser on your Host Machine and paste the following link http://192.168.10
 .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/3.Horizon%20Dashboard/Horizon3.png
 
 
-9. Word Of Advice.
+11. Word Of Advice.
 ==============
 
 * On any condition do not restart - shutdown your VM's directly(Power Off Option), just Save the machine state if you dont have the time or paitence to shut down the nodes properly.
 * Try not to modify virtual machines LAN card's mac address, it will require you to modify your network interfaces page.
 
 
-10. Licensing
+12. Licensing
 ============
 
 OpenStack Grizzly VM Sand Box Guide by Pranav Salunke is licensed under a Creative Commons Attribution 3.0 Unported License.
@@ -410,13 +620,13 @@ OpenStack Grizzly VM Sand Box Guide by Pranav Salunke is licensed under a Creati
 .. image:: http://i.imgur.com/4XWrp.png
 To view a copy of this license, visit [ http://creativecommons.org/licenses/by/3.0/deed.en_US ].
 
-11. Contacts
+13. Contacts
 ===========
 
-Pranav Salunke: pps.pranav@gmail.com
+Pranav Salunke: dguitarbite@gmail.com
 Bilel Msekni: bilel.msekni@telecom-sudparis.eu
 
-12. Acknowledgment
+14. Acknowledgment
 =================
 
 This work has been supported by:
