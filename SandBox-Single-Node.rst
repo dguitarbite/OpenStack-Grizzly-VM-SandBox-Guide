@@ -258,15 +258,15 @@ There are two different types of configurations that are possible for setting up
 
     1. Adapter 0 (Vboxnet0)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network1.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network1.png
     
     2. Adapter 1 (Vboxnet2)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network2.png
     
     3. Adapter 2 (NAT)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network3.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network3.png
 
    * Bridged
     
@@ -277,11 +277,11 @@ There are two different types of configurations that are possible for setting up
     
     1. Adapter 0
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network1.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network1.png
     
     2. Adapter 1
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Bridged/CN%20Network2.png
 
 
 2. Network Node: Same as Control Node.
@@ -300,19 +300,19 @@ There are two different types of configurations that are possible for setting up
 
     1. Adapter 0 (Vboxnet0)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network%201.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network%201.png
     
     2. Adapter 1 (Vboxnet1)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network2.png
     
     3. Adapter 2 (Vboxnet2)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network3.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network3.png
     
     4. Adapter 3 (NAT)
     
-      ..image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network4.png
+      ..image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network4.png
       
       
     * Bridged
@@ -325,15 +325,15 @@ There are two different types of configurations that are possible for setting up
     
     1. Adapter 0
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Briged1.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Briged1.png
     
     2. Adapter 1
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged2.png
 
     3. Adapter 2
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged3.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Bridged/NN%20Bridged3.png
 
 3. Compute Node: Same as Control Node.
 
@@ -349,15 +349,15 @@ There are two different types of configurations that are possible for setting up
 
     1. Adapter 0 (Vboxnet0)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network1.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network1.png
     
     2. Adapter 1 (Vboxnet1)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network2.png
     
     3. Adapter 2 (NAT)
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network3.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Host%20Only/CN%20Network3.png
 
    * Bridged
     
@@ -368,11 +368,11 @@ There are two different types of configurations that are possible for setting up
     
     1. Adapter 0
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network1.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network1.png
     
     2. Adapter 1
     
-      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/multi-node/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network2.png
+      .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Compute%20Node/Bridged/CN%20Network2.png
 
 
 * Well there are a few warnings that I must give you out of experience due to stupid habits that normal Users like me have -
