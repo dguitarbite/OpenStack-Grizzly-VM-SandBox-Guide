@@ -115,7 +115,7 @@ There are two different types of configurations that are possible for setting up
 
 
   :Node Role: NICs
-  :Single Node: eth0 (10.10.100.51), eth1 (192.168.100.51)
+  :Single Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
 
 
 **Note:** If you are using bridged connections you may skip this section (2. Host-Only )as there is no need to set up host-only connections.
@@ -126,8 +126,8 @@ There are two different types of configurations that are possible for setting up
 
 * The following are the host only connections that you will be setting up later on :
 
-  1. vboxnet0 - OpenStack Management Network - Host static IP 100.10.10.1 
-  2. vboxnet1 - VM Conf. Network - Host Static IP 100.20.20.1
+  1. vboxnet0 - OpenStack Management Network - Host static IP 10.10.10.1 
+  2. vboxnet1 - VM Conf. Network - Host Static IP 10.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
 
 2. Setup Your VM Environment
@@ -176,7 +176,7 @@ There are two different types of configurations that are possible for setting up
       +----------------------------+-----------------------+
       | Option                     |  Value                |
       +============================+=======================+
-      | IPv4 Address:              | 10.10.100.1           |
+      | IPv4 Address:              | 10.10.10.1            |
       +----------------------------+-----------------------+
       | IPv4 Network Mask:         | 255.255.255.0         |
       +----------------------------+-----------------------+
@@ -249,9 +249,9 @@ There are two different types of configurations that are possible for setting up
     
      Network Adapter | Host-Only Adapter Name |IP Address
     -----------------|------------------------|-----------
-     eth0            | Vboxnet0               |10.10.100.51
+     eth0            | Vboxnet0               |10.10.10.51
      eth1            | Vboxnet1               |192.168.100.51
-     eth2             | NAT                   |DHCP
+     eth2            | NAT                    |DHCP
      
     1. Adapter 0 (Vboxnet0)
     
@@ -270,7 +270,7 @@ There are two different types of configurations that are possible for setting up
     
      Network Adapter | IP Address
     -----------------|-------------
-     eth0            |  10.10.100.51
+     eth0            |  10.10.10.51
      eth1            |  192.168.100.51
     
     1. Adapter 0
@@ -343,9 +343,9 @@ Configure your network by editing :: /etc/network/interfaces file
     # Virtual Box vboxnet0 - OpenStack Management Network
     auto eth0
     iface eth0 inet static
-    address 10.10.100.51
+    address 10.10.10.51
     netmask 255.255.255.0
-    gateway 10.10.100.1
+    gateway 10.10.10.1
   
     # Virtual Box vboxnet2 - for exposing OpenStack API over external network
     auto eth1
