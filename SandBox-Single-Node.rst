@@ -146,9 +146,9 @@ There are two different types of configurations that are possible for setting up
   3. For testing I'm Using these machines - 
         * **Machine 1** -My host machine is Ubuntu 12.04 amd64 (Core2duo (VT not supported),4GB Ram DDR2)
           * For Testing this guide on a Non-VT enabled Machine.
-        * **Machine 2** -Ubuntu 12.10 amd64 (Intel i5 2nd gen (VT enabled), 8GB Ram DDR3)
+        * **Machine 2** -Ubuntu 13.04 amd64 (Intel i5 2nd gen (VT enabled), 8GB Ram DDR3)
           * For Testing this guide on a VT enabled Machine.
-        **Note :** I'm using only one machine for Deploying OpenStack. These two machines are for Testing.
+        **Note :** I'm using only one machine at a time for Deploying OpenStack. Thus, two different OpenStack installations on two different machines.
 
         * Please do consider using quad core processors as they are VT enabled. Which is required for virtualization.
           At the worst case go for a dual core processor.
