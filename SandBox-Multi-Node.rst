@@ -582,7 +582,7 @@ Configure your network by editing :: /etc/network/interfaces file
     netmask 255.255.255.0
     gateway 10.20.20.1
 
-For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
 
 
 9.3 KVM
