@@ -119,6 +119,10 @@ There are two different types of configurations that are possible for setting up
   :Node Role: NICs
   :Single Node: eth0 (10.10.10.51), eth1 (192.168.100.51)
 
+<<<<<<< HEAD:SandBox-Multi-Node.rst
+=======
+
+>>>>>>> f3cec6cfd2cb5655b91925da5057284e290852c2:SandBox-Single-Node.rst
 **Note:** If you are using bridged connections you may skip this section (2. Host-Only )as there is no need to set up host-only connections.
 
 **2. Host Only Connections:** 
@@ -131,7 +135,10 @@ There are two different types of configurations that are possible for setting up
   2. vboxnet1 - VM Conf. Network - Host Static IP 10.20.20.1
   3. vboxnet2 - VM External Network Access (Host Machine)
 
+<<<<<<< HEAD:SandBox-Multi-Node.rst
 
+=======
+>>>>>>> f3cec6cfd2cb5655b91925da5057284e290852c2:SandBox-Single-Node.rst
 2. Setup Your VM Environment
 ==============
 
@@ -148,9 +155,9 @@ There are two different types of configurations that are possible for setting up
   3. For testing I'm Using these machines - 
         * **Machine 1** -My host machine is Ubuntu 12.04 amd64 (Core2duo (VT not supported),4GB Ram DDR2)
           * For Testing this guide on a Non-VT enabled Machine.
-        * **Machine 2** -Ubuntu 12.10 amd64 (Intel i5 2nd gen (VT enabled), 8GB Ram DDR3)
+        * **Machine 2** -Ubuntu 13.04 amd64 (Intel i5 2nd gen (VT enabled), 8GB Ram DDR3)
           * For Testing this guide on a VT enabled Machine.
-        **Note :** I'm using only one machine for Deploying OpenStack. These two machines are for Testing.
+        **Note :** I'm using only one machine at a time for Deploying OpenStack. Thus, two different OpenStack installations on two different machines.
 
         * Please do consider using quad core processors as they are VT enabled. Which is required for virtualization.
           At the worst case go for a dual core processor.
@@ -292,12 +299,19 @@ There are two different types of configurations that are possible for setting up
     
      Network Adapter | Host-Only Adapter Name |IP Address
     -----------------|------------------------|-----------
+<<<<<<< HEAD:SandBox-Multi-Node.rst
      eth0            | Vboxnet0               |10.10.10.52
      eth1            | Vboxnet1               |10.20.20.52
      eth2            | Vboxnet2               |192.168.100.51
      eth3            | NAT                    |DHCP
 
 
+=======
+     eth0            | Vboxnet0               |10.10.10.51
+     eth1            | Vboxnet1               |192.168.100.51
+     eth2            | NAT                    |DHCP
+     
+>>>>>>> f3cec6cfd2cb5655b91925da5057284e290852c2:SandBox-Single-Node.rst
     1. Adapter 0 (Vboxnet0)
     
       .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Network%20Node/Host%20Only/NN%20Network%201.png
@@ -319,9 +333,14 @@ There are two different types of configurations that are possible for setting up
     
      Network Adapter | IP Address
     -----------------|-------------
+<<<<<<< HEAD:SandBox-Multi-Node.rst
      eth0            |  10.10.10.52
      eth1            |  10.20.20.52
      eth2            |  192.168.100.52
+=======
+     eth0            |  10.10.10.51
+     eth1            |  192.168.100.51
+>>>>>>> f3cec6cfd2cb5655b91925da5057284e290852c2:SandBox-Single-Node.rst
     
     1. Adapter 0
     
