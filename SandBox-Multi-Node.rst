@@ -178,7 +178,7 @@ There are two different types of configurations that are possible for setting up
       +----------------------------+-----------------------+
       | Option                     |  Value                |
       +============================+=======================+
-      | IPv4 Address:              | 10.10.10.1           |
+      | IPv4 Address:              | 10.10.10.1            |
       +----------------------------+-----------------------+
       | IPv4 Network Mask:         | 255.255.255.0         |
       +----------------------------+-----------------------+
@@ -522,7 +522,7 @@ Configure your network by editing :: /etc/network/interfaces file
 
 
 
-For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst>`_
 
 9. Compute Node
 ==============
