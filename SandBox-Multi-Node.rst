@@ -225,7 +225,7 @@ There are two different types of configurations that are possible for setting up
 4. Install SSH and FTP
 ==============
 
-* **This is for beginners ... **
+* **This is for beginners ...**
 
 * You may benifit by installing SSH and FTP so that you could use your remote shell to login into the machine and use your terminal which is more convenient that using the Virtual Machines tty through the Virtual Box's  UI. You get a few added comforts like copy - paste commands into the remote terminal which is not possible directly on VM.
 
@@ -250,11 +250,15 @@ There are two different types of configurations that are possible for setting up
   
     * Host-Only
     
-     Network Adapter | Host-Only Adapter Name |IP Address
-    -----------------|------------------------|-----------
-     eth0            | Vboxnet0               |10.10.10.51
-     eth1            | Vboxnet2               |10.20.20.51
-     eth2            | NAT                    |DHCP
+    +----------------+------------------------+-----------+
+    |Network Adapter | Host-Only Adapter Name |IP Address |
+    +================+========================+===========+
+    |eth0            | Vboxnet0               |10.10.10.51|
+    +----------------+------------------------+-----------+
+    | eth1           | Vboxnet2               |10.20.20.51|
+    +----------------+------------------------+-----------+
+    | eth2           | NAT                    |DHCP       |
+    +----------------+------------------------+-----------+
 
     1. Adapter 0 (Vboxnet0)
     
@@ -269,11 +273,14 @@ There are two different types of configurations that are possible for setting up
       .. image:: https://raw.github.com/dguitarbite/OpenStack-Grizzly-VM-SandBox-Guide/master/Images/ScreenShots/2.%20Setup%20VM/Multi%20Node/Control%20Node/Host%20Only/CN%20Network3.png
 
    * Bridged
-    
-     Network Adapter | IP Address
-    -----------------|-------------
-     eth0            |  10.10.10.51
-     eth1            |  192.168.100.51
+   
+   +-----------------+-----------------+
+   | Network Adapter | IP Address      |
+   +=================+=================+
+   | eth0            |  10.10.10.51    |
+   +-----------------+-----------------+
+   | eth1            |  192.168.100.51 |
+   +-----------------+-----------------+
     
     1. Adapter 0
     
@@ -290,13 +297,17 @@ There are two different types of configurations that are possible for setting up
   
     * Host-Only
     
-     Network Adapter | Host-Only Adapter Name |IP Address
-    -----------------|------------------------|-----------
-     eth0            | Vboxnet0               |10.10.10.52
-     eth1            | Vboxnet1               |10.20.20.52
-     eth2            | Vboxnet2               |192.168.100.51
-     eth3            | NAT                    |DHCP
-
+    +----------------+------------------------+---------------+
+    |Network Adapter | Host-Only Adapter Name |IP Address     |
+    +================+========================+===============+
+    |eth0            | Vboxnet0               |10.10.10.52    |
+    +----------------+------------------------+---------------+
+    |eth1            | Vboxnet1               |10.20.20.52    |
+    +----------------+------------------------+---------------+
+    |eth2            | Vboxnet2               |192.168.100.51 |
+    +----------------+------------------------+---------------+ 
+    |eth3            | NAT                    |DHCP           |
+    +----------------+------------------------+---------------+
 
     1. Adapter 0 (Vboxnet0)
     
@@ -317,11 +328,15 @@ There are two different types of configurations that are possible for setting up
       
     * Bridged
     
-     Network Adapter | IP Address
-    -----------------|-------------
-     eth0            |  10.10.10.52
-     eth1            |  10.20.20.52
-     eth2            |  192.168.100.52
+    +-----------------+-----------------+
+    |Network Adapter  | IP Address      |
+    +=================+=================+
+    |eth0             |  10.10.10.52    |
+    +-----------------+-----------------+
+    |eth1             |  10.20.20.52    |
+    +-----------------+-----------------+
+    |eth2             |  192.168.100.52 |
+    +-----------------+-----------------+
     
     1. Adapter 0
     
@@ -341,11 +356,15 @@ There are two different types of configurations that are possible for setting up
   
     * Host-Only
     
-     Network Adapter | Host-Only Adapter Name |IP Address
-    -----------------|------------------------|-----------
-     eth0            | Vboxnet0               |10.10.10.53
-     eth1            | Vboxnet1               |10.20.20.53
-     eth2            | NAT                    |DHCP
+    +----------------+------------------------+---------------+
+    |Network Adapter | Host-Only Adapter Name |IP Address     |
+    +================+========================+===============+
+    |eth0            | Vboxnet0               |10.10.10.53    |
+    +----------------+------------------------+---------------+
+    |eth1            | Vboxnet1               |10.20.20.53    |
+    +----------------+------------------------+---------------+
+    |eth2            | NAT                    |DHCP           |
+    +----------------+------------------------+---------------+
 
     1. Adapter 0 (Vboxnet0)
     
@@ -361,10 +380,13 @@ There are two different types of configurations that are possible for setting up
 
    * Bridged
     
-     Network Adapter | IP Address
-    -----------------|-------------
-     eth0            |  10.10.10.51
-     eth1            |  10.20.20.53
+    +-----------------+-----------------+
+    |Network Adapter  | IP Address      |
+    +=================+=================+
+    |eth0             |  10.10.10.51    |
+    +-----------------+-----------------+ 
+    |eth1             |  10.20.20.53    |
+    +-----------------+-----------------+ 
     
     1. Adapter 0
     
