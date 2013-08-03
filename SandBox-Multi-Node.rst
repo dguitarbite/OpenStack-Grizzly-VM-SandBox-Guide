@@ -538,7 +538,7 @@ Configure your network by editing :: /etc/network/interfaces file
     # Virtual Box vboxnet2 - for exposing OpenStack API over external network
     auto eth2
     iface eth1 inet static
-    address 192.168.100.51
+    address 192.168.100.52
     netmask 255.255.255.0
     gateway 192.168.100.1
 
