@@ -475,7 +475,8 @@ Configure your network by editing :: /etc/network/interfaces file
 
 
 
-For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+For the completing Control Node Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+After finishing Control Node, please come back to setting up Network Node.
 
 8. Network Node
 ==============
@@ -544,7 +545,8 @@ Configure your network by editing :: /etc/network/interfaces file
 
 
 
-For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_SingleNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+For the remaining Installation of Network Node Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+After finishing Control Node, please come back to setting up Compute Node.
 
 9. Compute Node
 ==============
@@ -604,8 +606,8 @@ Configure your network by editing :: /etc/network/interfaces file
     netmask 255.255.255.0
     gateway 10.20.20.1
 
-For the remaining Installation Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
-
+For the remaining Installation of Compute Node Follow `OpenStack-Grizzly-Install-guide <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst#23-mysql--rabbitmq>`_
+After finishing Control Node, please come back to setting up your Hypervisor (KVM).
 
 9.3 KVM
 ------------------
